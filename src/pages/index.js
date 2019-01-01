@@ -148,16 +148,16 @@ const ExploreCellGroup = styled.div`
 
 const ExploreCell = styled.div`
 
-  background: url(${props => props.image});
+  background-image: url(${props => props.image});
   height: 480px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  z-index: -1;
-  cursor: pointer;
+  background-position: 0 0;
+  transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   &:hover {
-    background: linear-gradient(rgba(151, 78, 78, .4), rgba(151, 78, 78, .4)), url(${props => props.image});
+    background-image: linear-gradient(rgba(151, 78, 78, .4), rgba(151, 78, 78, .4)), url(${props => props.image});
+    background-position: 100% 100%;
   }
 
   @media (max-width: 720px) {

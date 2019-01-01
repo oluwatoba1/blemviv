@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { Component } from "react"
-import {HeaderWrapper, HeaderGroup, TopHeader, BottomHeader, MenuButton, MenuList, MenuListHidden, Logo, SocialMedia} from './component'
+import {HeaderWrapper, HeaderGroup, TopHeader, BottomHeader, MenuButton, MenuList, Logo, SocialMedia} from './component'
 
 import ig from '../../images/instagram.png'
 import fb from '../../images/facebook.png'
@@ -27,9 +27,9 @@ class Header extends Component {
 
   render() {
     const menuChange = this.state.menuButtonToggled ? 'change' : '';
-    const toggle = [];
     // if(this.state.menuButtonToggled === false) {
-    //   this.refs.MenuList.css.animation = "slideBack 1s forwards";
+    //   const animation = `slideBack 1s forward`;
+    //   this.refs.id.style.animation = animation;
     // }
     return (
         <HeaderWrapper>
@@ -50,7 +50,7 @@ class Header extends Component {
           </BottomHeader>
         </HeaderGroup>
         {this.state.menuButtonToggled && (
-          <MenuList ref="MenuList" menuToggled={this.state.menuButtonToggled}>
+          <MenuList id="menuList" ref="menuList" menuToggled={this.state.menuButtonToggled}>
             <Link to="/">Home</Link>
             <Link to="/">About us</Link>
             <Link to="/">Shop</Link>
