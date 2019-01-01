@@ -153,7 +153,7 @@ const ExploreCell = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
-  transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   &:hover {
     background-image: linear-gradient(rgba(151, 78, 78, .4), rgba(151, 78, 78, .4)), url(${props => props.image});
