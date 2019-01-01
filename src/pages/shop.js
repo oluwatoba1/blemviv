@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
-// import Layout from '../components/layout';
 import styled, {css} from 'styled-components';
 
 const Wrapper = styled.div`
 
     position: relative;
     height: 100vh;
-    width: 100vw;
+    scroll-behavior: smooth;
+
+
+    button {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        z-index: 20;
+        transform: rotate(90deg);
+    }
 
 
 `
 const Div = styled.div`
+
     position: relative;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
+
 `
 
 const Top = styled.div`
-    display: block;
+    position: relative;
     height: 65vh;
-
 
 `
 
@@ -27,7 +36,6 @@ const BigText = styled.h1`
     margin: 0;
     font-size: 100px;
     padding: 20px;
-    align-self: start;
 
     @media (max-width: 640px) {
         font-size: 60px;
@@ -35,7 +43,6 @@ const BigText = styled.h1`
 `
 
 const SmallText = styled.h5`
-    margin: 0;
     font-size: 16px;
     text-decoration: underline;
     padding: 0 20px;
@@ -69,88 +76,77 @@ const Bottom = styled.div`
     }
 `
 
-const ProductGroup = styled.div`
 
-    
+
+const ProductWrapperOne = styled.div`
+
+    ${({scrollHeight}) => scrollHeight < 400 & scrollHeight > 30 && css`
+        
+        transition: .8s ease-in-out cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        animation: slideUp .8s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    `}
+
+    z-index: 10;
     width: 100vw;
     height: 100vh;
-    transition: all 1s ease-in-out;
-    animation: slideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+       
 
         @keyframes slideUp {
             0%{
-                transform: translateY(20px);
-            }
-            100%{
-                transform: translateY(0);
-            }
-        }
-    
-
-    p{
-        margin: 0;
-        padding: 20px;
-        font-size: 20px;
-        color: #fff;
-        animation: slideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-        @keyframes slideUp {
-            0%{
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             100%{
                 transform: translateY(0);
             }
         }
 
-    }
+        .brown{
+            height: 50vh;
+            z-index: 10;
 
-`
+            background: linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 55%);
+            animation: slideUp .8s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-const OneHalf = styled.div`
-    
-    height: 50vh;
-    animation: fadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-    
-         
-            background: ${({background}) => background};
-
-
-    @keyframes fadeIn {
-            0%{
-                opacity: 0;
+            @keyframes slideUp {
+                0%{
+                    transform: translateY(30px);
+                }
+                100%{
+                    transform: translateY(0);
+                }
             }
-            100%{
-                opacity: 1;
+
+
+            p{
+                margin: 0;
+                padding: 20px;
+                font-size: 20px;
+                color: #fff;
+                animation: slideUp .8s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+                @keyframes slideUp {
+                    0%{
+                        transform: translateY(30px);
+                        opacity: 0;
+                    }
+                    100%{
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+
             }
         }
 
-    p{
-        margin: 0;
-        padding: 20px;
-        font-size: 20px;
-        color: #fff;
-        animation: slideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-        @keyframes slideUp {
-            0%{
-                transform: translateY(20px);
-            }
-            100%{
-                transform: translateY(0);
-            }
+        .half{
+            height: 50vh;
+            background: #fff;
+            z-index: 10;
         }
-
-    }
-
-`
-
-const OtherHalf = styled.div`
-
-    height: 50vh;
     
+
 `
+
 
 class Shop extends Component {
 
@@ -158,115 +154,82 @@ class Shop extends Component {
         super(props);
         
         this.state = {
-            scrollHeight: 0,
-            listNumber: 1
-        }
+           
+            scrolled: false,
+            scrollState: 0,
+            scrollHeight: null
+        };
+
+        this.landing = React.createRef();
+        this.productOne = React.createRef();
+        this.productTwo = React.createRef();
     }
 
     componentDidMount() {
-            document.addEventListener('touchstart', this.handleTouchStart)
-            document.addEventListener('touchmove', this.handleScroll)
+            window.addEventListener('scroll', this.handleTouchStart);            
     }
 
-    handleTouchStart = (event) => {
-        const scrollHeight = event.touches[0].clientY
-        this.setState({scrollHeight})
-    }
+    handleTouchStart = () => {
 
-    handleScroll = (event) => {
-        const scrollHeight = event.touches[0].clientY;
+        const scrollHeight = window.pageYOffset;
+        console.log(scrollHeight);
 
-        const yDiff = this.state.scrollHeight - scrollHeight
-
-                if (yDiff > 0){
-                    while(this.state.listNumber < 4){
-                        this.setState({
-                            scrollHeight,
-                            listNumber: this.state.listNumber + 1
-                        });
-                    }
-                }
-                else{
-                    while(this.state.listNumber > 0){
-                        this.setState({
-                            scrollHeight,
-                            listNumber: this.state.listNumber - 1
-                        });
-                    }
-            }
-    
-        console.log(this.state.listNumber)
+        this.setState({scrollHeight});
+        
+        if(scrollHeight < 400 & scrollHeight > 395) {
+            window.scrollTo(0, this.productOne.current.offsetTop)
+        }
         
     }
 
     
 
     render() {
-        const Pages =
-            {
-                items: [
-                        {
-                            id: 1,
-                            background: 'linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 55%)'
-                        },
-                        {
-                            id: 2,
-                            background: 'linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 55%)'
-                        },
-                        {
-                            id: 3,
-                            background: 'linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 55%)'
-                        },
-                        {
-                            id: 4,
-                            background: 'linear-gradient(90deg, rgb(81,129,10) 0%, rgb(101,160,12) 55%)'
-                        }
-                    ]
+        // let Pages =
+        //     [
+        //         {
+        //             tag: 'a',
+        //             _id: 1,
+        //             background: 'linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 55%)'
+        //         },
+        //         {
+        //             tag: 'b',
+        //             _id: 2,
+        //             background: 'linear-gradient(90deg, rgb(116,131,10) 0%, rgb(153,125,12) 55%)'
+        //         },
+        //         {
+        //             tag: 'c',
+        //             _id: 3,
+        //             background: 'linear-gradient(90deg, rgb(10,131,126) 0%, rgb(16,199,192) 55%)'
+        //         },
+        //         {
+        //             tag: 'd',
+        //             _id: 4,
+        //             background: 'linear-gradient(90deg, rgb(11,58,141) 0%, rgb(16,82,199) 55%)'
+        //         }
         
-            };
+        //     ];
         return (
             <Wrapper>
-                {this.state.listNumber === 0 &&
-                    <Div id={this.state.listNumber}>
+
+                <Div>
                     <Top>
-                    <BigText>ALL NATURAL CHOCOLATE BARS</BigText>
-                    <SmallText>ALL NATURAL CHOCOLATE BARS</SmallText>
-                </Top>
-                <Bottom>
-                <p>SOME TEXT</p>
-                </Bottom>
-                    </Div>
-                }    
+                        <BigText>ALL NATURAL CHOCOLATE BARS</BigText>
+                        <SmallText>ALL NATURAL CHOCOLATE BARS</SmallText>
+                    </Top>
+                    <Bottom>
+                        <p>SOME TEXT</p>
+                    </Bottom>
+                </Div>
+
+                {/* <button disabled={this.state.scrollState === 4 ? true: false} onClick={() => this.handleScroll(this.productRef)}>SOME TEXT</button> */}
+
                 
+                <ProductWrapperOne scrollHeight={this.state.scrollHeight} ref={this.productOne}>
+                    <div className="brown"><p>Will you please work!!!</p></div>
+                    <div className="half"></div>
+                </ProductWrapperOne>                
 
-                {Pages.items.map((item) =>
-                    this.state.listNumber === item.id &&
-
-                        <ProductGroup key={item.id}>
-                            <OneHalf background={item.background}><p>SOME TEXT</p></OneHalf>
-                            <OtherHalf></OtherHalf>
-                        </ProductGroup>
-
-                )}
-
-                {/* {this.state.listNumber === 2 &&
-                    <ProductGroup>
-                    <p>SOME TEXT 2</p>
-                    </ProductGroup>
-                }
-                {this.state.listNumber === 3 &&
-                    <ProductGroup>
-                    <p>SOME TEXT 3</p>
-                    </ProductGroup>
-                }
-                {this.state.listNumber === 4 &&
-
-                    <ProductGroup>
-                        <OneHalf background={this.state.listNumber}><p>SOME TEXT 4</p></OneHalf>
-                        <OtherHalf></OtherHalf>
-                    </ProductGroup>} */}
-                
-            
             </Wrapper>
         );
     }
