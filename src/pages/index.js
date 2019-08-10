@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import blemviv1 from '../images/blemviv1.jpg'
+import blemvivscroll2 from '../images/blemviv-scroll2.jpg';
 
 const Wrapper = styled.div`
 position: relative;
@@ -32,11 +33,41 @@ const MainImage = styled.div`
  
 `
 
+const CellGroup = styled.div`
+
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 20px;
+  overflow-x: scroll;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  -webkit-overflow-scrolling: touch;
+
+`
+
+const Cell = styled.img`
+
+  height: 150px;
+  padding: 30px 0;
+
+`
+
 const IndexPage = () => (
   <Layout>
     <Wrapper>
     <SEO title="Home" />
     <MainImage image={blemviv1}></MainImage>
+    <CellGroup>
+
+      <Cell src={blemvivscroll2}/>
+      <Cell src={blemvivscroll2}/>
+      <Cell src={blemvivscroll2}/>
+      <Cell src={blemvivscroll2}/>
+      <Cell src={blemvivscroll2}/>
+      <Cell src={blemvivscroll2}/>
+      <Cell src={blemvivscroll2}/>
+
+    </CellGroup>
     <ul>
       <li>were</li>
       <li>were</li>
