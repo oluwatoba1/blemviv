@@ -97,7 +97,7 @@ const BottomHeader = styled.div`
 const Header = ({ siteTitle }) => (
   <HeaderGroup>
     <TopHeader>
-      <Logo>{siteTitle}</Logo>
+      <Logo>Blemiviv skin care</Logo>
     </TopHeader>
     <BottomHeader>
       <Link to="/">Home</Link>
