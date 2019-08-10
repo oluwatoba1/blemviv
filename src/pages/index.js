@@ -51,6 +51,14 @@ const Cell = styled.img`
   height: 150px;
   padding: 30px 0;
 
+  @media (max-width: 720px) {
+    padding: 20px 0;
+  }
+
+  @media (max-width: 640px) {
+    padding: 15px 0;
+  }
+
 `
 
 const IndexPage = () => (
