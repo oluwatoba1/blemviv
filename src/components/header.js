@@ -6,7 +6,7 @@ import styled from 'styled-components'
 const HeaderGroup = styled.header`
 
   position: fixed;
-  height: 80px;
+  height: 90px;
   width: 100%;
   z-index: 100;
   display: grid;
@@ -38,7 +38,7 @@ const Logo = styled.p`
   text-transform: uppercase;
   margin: 0;
   padding: 0;
-  font-size: 38px;
+  font-size: 44px;
   font-weight: 300;
 
   @media (max-width: 720px) {
@@ -67,7 +67,7 @@ const BottomHeader = styled.div`
     color: rgba(0, 0, 0, .5);
     padding-right: 60px;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 16px;
     transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     :nth-child(4) {
@@ -76,7 +76,7 @@ const BottomHeader = styled.div`
 
   @media (max-width: 720px) {
     padding-right: 40px;
-    font-size: 8px;
+    font-size: 10px;
   }
 
   @media (max-width: 640px) {
@@ -88,6 +88,7 @@ const BottomHeader = styled.div`
 
   a:hover {
     color: #e7a0df;
+    font-weight: 500;
   }
 
   
