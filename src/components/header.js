@@ -64,7 +64,7 @@ const BottomHeader = styled.div`
   a {
     text-decoration: none;
     margin: 0;
-    color: rgba(0, 0, 0, .5);
+    color: rgba(0, 0, 0, .7);
     padding-right: 60px;
     text-transform: uppercase;
     font-size: 16px;
