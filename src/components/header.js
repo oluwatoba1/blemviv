@@ -38,15 +38,15 @@ const Logo = styled.p`
   text-transform: uppercase;
   margin: 0;
   padding: 0;
-  font-size: 40px;
+  font-size: 38px;
   font-weight: 300;
 
   @media (max-width: 720px) {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   @media (max-width: 640px) {
-    font-size: 24px;
+    font-size: 22px;
   }
 
 `
