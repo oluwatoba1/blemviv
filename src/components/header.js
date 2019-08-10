@@ -42,11 +42,11 @@ const Logo = styled.p`
   font-weight: 300;
 
   @media (max-width: 720px) {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   @media (max-width: 640px) {
-    font-size: 22px;
+    font-size: 26px;
   }
 
 `
@@ -76,12 +76,12 @@ const BottomHeader = styled.div`
 
   @media (max-width: 720px) {
     padding-right: 40px;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   @media (max-width: 640px) {
     padding-right: 35px;
-    font-size: 8px;
+    font-size: 10px;
   }
 
   }
