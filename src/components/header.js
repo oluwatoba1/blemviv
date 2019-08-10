@@ -42,11 +42,11 @@ const Logo = styled.p`
   font-weight: 300;
 
   @media (max-width: 720px) {
-    font-size: 34px;
+    font-size: 30px;
   }
 
   @media (max-width: 640px) {
-    font-size: 32px;
+    font-size: 28px;
   }
 
 `
