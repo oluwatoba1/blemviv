@@ -34,9 +34,9 @@ const CellGroup = styled.div`
 
   position: relative;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   margin-top: 20px;
-  grid-gap: 20px;
+  grid-gap: 30px;
   overflow-x: scroll;
   border: 1px solid rgba(0, 0, 0, 0.3);
   -webkit-overflow-scrolling: touch;
@@ -45,15 +45,22 @@ const CellGroup = styled.div`
 
 const Cell = styled.img`
 
-  height: 150px;
+  height: 200px;
   padding: 30px 0;
+  transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   @media (max-width: 720px) {
-    padding: 20px 0;
+    height: 100px;
+    padding: 25px 0;
   }
 
   @media (max-width: 640px) {
-    padding: 15px 0;
+    height: 100px;
+    padding: 20px 0;
   }
 
 `
@@ -65,6 +72,7 @@ const IndexPage = () => (
     <MainImage image={blemviv1}></MainImage>
     <CellGroup>
 
+      <Cell src={blemvivscroll2}/>
       <Cell src={blemvivscroll2}/>
       <Cell src={blemvivscroll2}/>
       <Cell src={blemvivscroll2}/>
