@@ -27,7 +27,7 @@ const MainImage = styled.div`
   }
 
   @media (max-width: 640px) {
-    height: 350px;
+    height: 380px;
     padding-top: 50px;
   }
  
