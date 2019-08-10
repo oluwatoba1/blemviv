@@ -13,9 +13,20 @@ const HeaderGroup = styled.header`
   grid-template-rows: repeat(2, 1fr);
   background-color: #fff;
 
+  @media (max-width: 720px) {
+    height: 60px;
+  }
+
+  @media (max-width: 640px) {
+    height: 60px;
+  }
+
 `
 
 const TopHeader = styled.div`
+
+  position: relative;
+  width: 100%;
 
 `
 
@@ -29,6 +40,14 @@ const Logo = styled.p`
   padding: 0;
   font-size: 40px;
   font-weight: 300;
+
+  @media (max-width: 720px) {
+    font-size: 34px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 32px;
+  }
 
 `
 
@@ -55,10 +74,20 @@ const BottomHeader = styled.div`
     padding-right: 0;
   }
 
+  @media (max-width: 720px) {
+    padding-right: 40px;
+    font-size: 8px;
+  }
+
+  @media (max-width: 640px) {
+    padding-right: 35px;
+    font-size: 8px;
+  }
+
   }
 
   a:hover {
-    color: pink;
+    color: #e7a0df;
   }
 
   

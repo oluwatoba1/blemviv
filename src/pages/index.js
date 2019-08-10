@@ -5,17 +5,30 @@ import styled from 'styled-components'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import constrodekorpools from '../images/constrodekorpools.jpg'
+import blemviv1 from '../images/blemviv1.jpg'
 
 const Wrapper = styled.div`
 position: relative;
 `
 
-const SomePic = styled.div`
+const MainImage = styled.div`
   background: url(${props => props.image});
-  height: 400px;
+  height: 600px;
+  background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
   padding-top: 100px;
+  transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  @media (max-width: 720px) {
+    height: 400px;
+    padding-top: 60px;
+  }
+
+  @media (max-width: 640px) {
+    height: 350px;
+    padding-top: 60px;
+  }
  
 `
 
@@ -23,7 +36,7 @@ const IndexPage = () => (
   <Layout>
     <Wrapper>
     <SEO title="Home" />
-    <SomePic image={constrodekorpools}></SomePic>
+    <MainImage image={blemviv1}></MainImage>
     <ul>
       <li>were</li>
       <li>were</li>
