@@ -18,17 +18,17 @@ const MainImage = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  padding-top: 100px;
+  padding-top: 80px;
   transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   @media (max-width: 720px) {
     height: 400px;
-    padding-top: 50px;
+    padding-top: 40px;
   }
 
   @media (max-width: 640px) {
     height: 380px;
-    padding-top: 50px;
+    padding-top: 40px;
   }
  
 `
@@ -38,6 +38,7 @@ const CellGroup = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  margin-top: 20px;
   grid-gap: 20px;
   overflow-x: scroll;
   border: 1px solid rgba(0, 0, 0, 0.3);
