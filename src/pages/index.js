@@ -23,12 +23,12 @@ const MainImage = styled.div`
 
   @media (max-width: 720px) {
     height: 400px;
-    padding-top: 60px;
+    padding-top: 50px;
   }
 
   @media (max-width: 640px) {
     height: 350px;
-    padding-top: 60px;
+    padding-top: 50px;
   }
  
 `
