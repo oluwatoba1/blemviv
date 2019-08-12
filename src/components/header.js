@@ -1,7 +1,13 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
-import styled from 'styled-components'
+import React, { Component } from "react"
+import styled, {css} from 'styled-components'
+
+const HeaderWrapper = styled.div`
+
+  position: relative;
+
+`
 
 const HeaderGroup = styled.header`
 
@@ -14,11 +20,13 @@ const HeaderGroup = styled.header`
   background-color: #fff;
 
   @media (max-width: 720px) {
-    height: 60px;
+    height: 50px;
+    grid-template-rows: repeat(1, 1fr);
   }
 
   @media (max-width: 640px) {
-    height: 60px;
+    height: 50px;
+    grid-template-rows: repeat(1, 1fr);
   }
 
 `
@@ -27,6 +35,19 @@ const TopHeader = styled.div`
 
   position: relative;
   width: 100%;
+  
+
+
+  @media (max-width: 720px) {
+    display: grid;
+    grid-template-columns: 10% auto;
+  }
+
+  @media (max-width: 640px) {
+    display: grid;
+    grid-template-columns: 10% auto;
+  }
+
 
 `
 
@@ -35,6 +56,7 @@ const TopHeader = styled.div`
 const Logo = styled.p`
   
   text-align: center;
+  text-justify: center;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
@@ -51,6 +73,58 @@ const Logo = styled.p`
 
 `
 
+const MenuButton = styled.div`
+
+  display: none;  
+
+@media (max-width: 720px){
+  display: inline-block;
+  margin: 10px auto;
+
+  .bar1, .bar2, .bar3 {
+  
+    background-color: #333;
+    width: 30px;
+    height: 5px;
+    margin-bottom: 5px;
+    align-content: center;
+    transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  ${({menuToggled}) => menuToggled && css`
+    .bar1.change {
+      transform: rotate(-45deg) translate(-8px, 6px);
+    }
+    .bar2.change {
+      opacity: 0;
+    }
+    .bar3.change {
+      transform: rotate(45deg) translate(-8px, -6px);
+    }
+  `} 
+}
+
+`
+
+const MenuList = styled.div`
+
+  display: none;
+
+  @media (max-width: 720px) {
+    height: 100vh;
+
+    ${({menuToggled}) => menuToggled && css`
+
+      position: absolute;
+      top: 10%;
+      left: 0;
+      display: block;
+
+  `}
+  }
+
+`
+
 const BottomHeader = styled.div`
 
   display: flex;
@@ -58,7 +132,9 @@ const BottomHeader = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid #dadad8;
+  background-color: rgba(220, 220, 220, .4);
+;
 
 
   a {
@@ -75,13 +151,11 @@ const BottomHeader = styled.div`
   }
 
   @media (max-width: 720px) {
-    padding-right: 40px;
-    font-size: 12px;
+    display: none;
   }
 
   @media (max-width: 640px) {
-    padding-right: 35px;
-    font-size: 10px;
+    display: none;
   }
 
   }
@@ -94,19 +168,51 @@ const BottomHeader = styled.div`
   
 `
 
-const Header = ({ siteTitle }) => (
-  <HeaderGroup>
-    <TopHeader>
-      <Logo>Blemiviv skin care</Logo>
-    </TopHeader>
-    <BottomHeader>
-      <Link to="/">Home</Link>
-      <Link to="/">About</Link>
-      <Link to="/">Shop</Link>
-      <Link to="/">Contact</Link>
-    </BottomHeader>
-  </HeaderGroup>
-)
+class Header extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuButtonToggled: false
+    }
+    
+  }
+
+  toggle = () => {
+    this.setState({menuButtonToggled: !this.state.menuButtonToggled})
+  }
+  
+
+  render() {
+    const menuChange = this.state.menuButtonToggled ? 'change' : '';
+    return (
+        <HeaderWrapper>
+          <HeaderGroup>
+          <TopHeader>
+            <MenuButton menuToggled={this.state.menuButtonToggled} onClick={this.toggle}>
+              <div className={`bar1 ${menuChange}`}></div>
+              <div className={`bar2 ${menuChange}`}></div>
+              <div className={`bar3 ${menuChange}`}></div>
+            </MenuButton>
+            <Logo>Blemiviv skin care</Logo>
+          </TopHeader>
+          <BottomHeader>
+            <Link to="/">Home</Link>
+            <Link to="/">About</Link>
+            <Link to="/">Shop</Link>
+            <Link to="/">Contact</Link>
+          </BottomHeader>
+        </HeaderGroup>
+        <MenuList>
+          <Link to="/">Home</Link>
+          <Link to="/">About</Link>
+          <Link to="/">Shop</Link>
+          <Link to="/">Contact</Link>
+        </MenuList>
+      </HeaderWrapper>
+    )
+  }
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

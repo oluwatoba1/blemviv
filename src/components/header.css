@@ -1,0 +1,19 @@
+.bar1, .bar2, .bar3 {
+  
+    background-color: #000;
+    width: 30px;
+    height: 5px;
+    margin-bottom: 5px;
+    align-content: center;
+    transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .bar1.change {
+    transform: rotate(-45deg);
+  }
+  .bar2.change {
+    opacity: 0;
+  }
+  .bar3.change {
+    transform: rotate(45deg);
+  }

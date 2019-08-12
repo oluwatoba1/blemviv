@@ -18,7 +18,7 @@ const MainImage = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   @media (max-width: 720px) {
     height: 400px;
@@ -40,6 +40,11 @@ const CellGroup = styled.div`
   overflow-x: scroll;
   border: 1px solid rgba(0, 0, 0, 0.3);
   -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+
+  }
 
 `
 
