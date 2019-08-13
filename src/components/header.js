@@ -84,14 +84,15 @@ const MenuButton = styled.div`
   align-items: center;  
 
 @media (max-width: 720px){
-  display: inline-block;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 5px;
 
   .bar1, .bar2, .bar3 {
   
     background-color: #333;
     width: 30px;
     height: 5px;
-    margin-bottom: 5px;
     transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   
