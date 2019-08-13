@@ -122,16 +122,32 @@ const MenuList = styled.div`
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     width: 100%;
-    height: 80vh;
-    background-color: #000;
+    height: 95vh;
+    background-color: rgba(12,5,11, .9);
     z-index: 100;
     align-items: center;
     justify-items: center;
+    animation: slideIn 1s forwards;
+
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-20%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
   }
 
   a{
     color: #fff;
     text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  a:hover {
+    font-size: 28px;
   }
 
 `
