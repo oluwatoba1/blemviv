@@ -86,7 +86,7 @@ export const MenuButton = styled.div`
 @media (max-width: 720px){
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  grid-gap: 5px;
+  grid-gap: 4px;
 
   .bar1, .bar2, .bar3 {
   
@@ -98,13 +98,13 @@ export const MenuButton = styled.div`
   
   ${({menuToggled}) => menuToggled && css`
     .bar1.change {
-      transform: rotate(-45deg) translate(-7px, 6px);
+      transform: rotate(-45deg) translate(-6px, 6px);
     }
     .bar2.change {
       opacity: 0;
     }
     .bar3.change {
-      transform: rotate(45deg) translate(-7px, -6px);
+      transform: rotate(45deg) translate(-4px, -6px);
     }
   `} 
 }
