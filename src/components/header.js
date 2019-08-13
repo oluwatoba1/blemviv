@@ -86,7 +86,7 @@ const MenuButton = styled.div`
 @media (max-width: 720px){
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  grid-gap: 5px;
+  grid-gap: 4px;
 
   .bar1, .bar2, .bar3 {
   
