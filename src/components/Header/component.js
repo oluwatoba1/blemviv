@@ -168,6 +168,19 @@ export const MenuList = styled.div`
 
 `
 
+export const SocialMedia = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
+  align-self: center;
+  justify-self: center;
+
+  img {
+    height: 30px;
+  }
+
+`
+
 export const MenuListHidden = styled.div`
 
 
@@ -246,3 +259,4 @@ export const BottomHeader = styled.div`
 
   
 `
+

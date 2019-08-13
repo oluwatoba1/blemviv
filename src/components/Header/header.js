@@ -1,7 +1,12 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { Component } from "react"
-import {HeaderWrapper, HeaderGroup, TopHeader, BottomHeader, MenuButton, MenuList, MenuListHidden, Logo} from './component'
+import {HeaderWrapper, HeaderGroup, TopHeader, BottomHeader, MenuButton, MenuList, MenuListHidden, Logo, SocialMedia} from './component'
+
+import ig from '../../images/instagram.png'
+import fb from '../../images/facebook.png'
+import twitter from '../../images/twitter.png'
+import yt from '../../images/youtube.png'
 
 
 
@@ -43,9 +48,15 @@ class Header extends Component {
         {this.state.menuButtonToggled === true && (
           <MenuList menuToggled={this.state.menuButtonToggled}>
             <Link to="/">Home</Link>
-            <Link to="/">About</Link>
-            <Link to="/">Shop</Link>
-            <Link to="/">Contact</Link>
+            <Link to="/">About us</Link>
+            <Link to="/">Shop here with us</Link>
+            <Link to="/">Contact us</Link>
+            <SocialMedia>
+              <img src={ig} />
+              <img src={twitter} />
+              <img src={fb} />
+              <img src={yt} />
+            </SocialMedia>
         </MenuList>
         )}
 
