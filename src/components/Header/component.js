@@ -138,18 +138,32 @@ export const MenuList = styled.div`
         transform: translateX(0);
       }
     }
+
+    @keyframes slideBack {
+      0% {
+        transform: translateX(0);
+        opacity: 1;
+
+      }
+      100% {
+        transform: translateX(120%);
+        opacity: 0;
+
+      }
+    }
   }
 
   a{
     color: #333;
     text-decoration: none;
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 800;
     border-bottom: 2px solid #333;
   }
 
   a:hover {
-    font-size: 32px;
+    font-size: 34px;
   }
 
 `
@@ -173,25 +187,14 @@ export const MenuListHidden = styled.div`
     justify-items: center;
     animation: slideBack 1s forwards;
 
-    @keyframes slideBack {
-      0% {
-        transform: translateX(0);
-        opacity: 1;
-
-      }
-      100% {
-        transform: translateX(120%);
-        opacity: 0;
-
-      }
-    }
+    
   }
 
   a{
     color: #fff;
     text-decoration: none;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 800;
   }
 
   a:hover {
