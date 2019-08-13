@@ -42,7 +42,6 @@ const TopHeader = styled.div`
   width: 100%;
   align-items: center;
   justify-items: center;
-  padding: 8px 0;
   
 
 
@@ -87,7 +86,7 @@ const MenuButton = styled.div`
 @media (max-width: 720px){
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  grid-gap: 4px;
+  grid-gap: 5px;
 
   .bar1, .bar2, .bar3 {
   
