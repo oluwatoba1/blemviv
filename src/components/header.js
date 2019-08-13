@@ -100,13 +100,13 @@ const MenuButton = styled.div`
   
   ${({menuToggled}) => menuToggled && css`
     .bar1.change {
-      transform: rotate(-45deg) translate(-8px, 6px);
+      transform: rotate(-45deg) translate(-7px, 6px);
     }
     .bar2.change {
       opacity: 0;
     }
     .bar3.change {
-      transform: rotate(45deg) translate(-8px, -6px);
+      transform: rotate(45deg) translate(-7px, -6px);
     }
   `} 
 }
