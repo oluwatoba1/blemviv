@@ -81,7 +81,7 @@ const Logo = styled.p`
 const MenuButton = styled.div`
 
   display: none;
-  padding: 10px 0;  
+  align-items: center;  
 
 @media (max-width: 720px){
   display: inline-block;
