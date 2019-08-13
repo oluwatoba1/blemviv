@@ -31,6 +31,12 @@ body {
   transform: translate(-50%, -50%);
 }
 
+@media (max-width: 720px) {
+  .Loading img {
+    height: 150px;
+  }
+}
+
 ::selection {
   background: #ebc4e6;
 }
