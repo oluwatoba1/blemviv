@@ -90,8 +90,7 @@ const MenuButton = styled.div`
     background-color: #333;
     width: 30px;
     height: 5px;
-    margin-bottom: 5px;
-    align-content: center;
+    margin: 5px 0;
     transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   
