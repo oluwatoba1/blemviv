@@ -173,8 +173,6 @@ export const SocialMedia = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 40px;
   align-self: center;
-  justify-self: center;
-
   img {
     height: 30px;
   }
