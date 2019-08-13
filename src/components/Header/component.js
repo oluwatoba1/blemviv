@@ -64,7 +64,7 @@ export const Logo = styled.p`
   margin: 0;
   padding: 0;
   font-size: 44px;
-  font-weight: 300;
+  font-weight: 700;
   text-align: center;
   text-justify: center;
 
@@ -156,7 +156,7 @@ export const MenuList = styled.div`
   a{
     color: #333;
     text-decoration: none;
-    font-size: 32px;
+    font-size: 28px;
     text-transform: uppercase;
     font-weight: 700;
     border-bottom: 2px solid #333;
