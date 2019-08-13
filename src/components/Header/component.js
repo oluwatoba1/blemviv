@@ -158,7 +158,7 @@ export const MenuList = styled.div`
     text-decoration: none;
     font-size: 32px;
     text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 700;
     border-bottom: 2px solid #333;
   }
 
@@ -181,6 +181,7 @@ export const MenuListHidden = styled.div`
     width: 100%;
     height: 95vh;
     background-color: rgba(255, 255, 255, .9);
+    opacity: 0;
     z-index: 100;
     padding: 20px 0;
     align-items: start;
