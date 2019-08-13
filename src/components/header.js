@@ -42,6 +42,7 @@ const TopHeader = styled.div`
   width: 100%;
   align-items: center;
   justify-items: center;
+  padding: 8px 0;
   
 
 
@@ -81,7 +82,7 @@ const Logo = styled.p`
 const MenuButton = styled.div`
 
   display: none;
-  align-items: center;  
+  align-items: center; 
 
 @media (max-width: 720px){
   display: grid;
