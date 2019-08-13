@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
 import loading from '../images/loader.gif'
 
-import Header from "./header"
+import Header from "./Header/header"
 import "./layout.css"
 
 class Layout extends Component {

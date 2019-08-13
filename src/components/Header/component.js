@@ -1,9 +1,7 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React, { Component } from "react"
 import styled, {css} from 'styled-components'
 
-const HeaderWrapper = styled.div`
+
+export const HeaderWrapper = styled.div`
 
   position: relative;
   
@@ -14,7 +12,7 @@ const HeaderWrapper = styled.div`
 
 `
 
-const HeaderGroup = styled.header`
+export const HeaderGroup = styled.header`
 
   position: fixed;
   height: 90px;
@@ -36,7 +34,7 @@ const HeaderGroup = styled.header`
 
 `
 
-const TopHeader = styled.div`
+export const TopHeader = styled.div`
 
   position: relative;
   width: 100%;
@@ -47,7 +45,7 @@ const TopHeader = styled.div`
 
   @media (max-width: 720px) {
     display: grid;
-    grid-template-columns: 10% auto;
+    grid-template-columns: auto 10%;
   }
 
   @media (max-width: 640px) {
@@ -60,7 +58,7 @@ const TopHeader = styled.div`
 
 
 
-const Logo = styled.p`
+export const Logo = styled.p`
   
   text-transform: uppercase;
   margin: 0;
@@ -80,7 +78,7 @@ const Logo = styled.p`
 
 `
 
-const MenuButton = styled.div`
+export const MenuButton = styled.div`
 
   display: none;
   align-items: center; 
@@ -93,7 +91,7 @@ const MenuButton = styled.div`
   .bar1, .bar2, .bar3 {
   
     background-color: #333;
-    width: 30px;
+    width: 25px;
     height: 4px;
     transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
@@ -113,7 +111,7 @@ const MenuButton = styled.div`
 
 `
 
-const MenuList = styled.div`
+export const MenuList = styled.div`
 
 
   @media (max-width: 720px) {
@@ -122,40 +120,106 @@ const MenuList = styled.div`
     top: 50px;
     left: 0;
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: 15vh 15vh 15vh 15vh auto;
     width: 100%;
     height: 95vh;
-    background-color: rgba(12,5,11, .9);
+    background-color: rgba(255, 255, 255, .9);
     z-index: 100;
-    padding: 20px 0;
+    padding: 20px 40px;
     align-items: start;
-    justify-items: center;
-    animation: slideIn 1s forwards;
+    justify-items: start;
+    ${({menuToggled}) => menuToggled === false && css`
+        animation: slideBack 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    `}
+
+    ${({menuToggled}) => menuToggled === true && css`
+        animation: slideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    `}
 
     @keyframes slideIn {
       0% {
-        transform: translateX(-20%);
+        transform: translateX(120%);
       }
       100% {
         transform: translateX(0);
       }
     }
+
+    @keyframes slideBack {
+      0% {
+        transform: translateX(0);
+        opacity: 1;
+
+      }
+      100% {
+        transform: translateX(120%);
+        opacity: 0;
+
+      }
+    }
   }
 
   a{
-    color: #fff;
+    color: #333;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
+    border-bottom: 2px solid #333;
   }
 
   a:hover {
-    font-size: 28px;
+    font-size: 32px;
   }
 
 `
 
-const BottomHeader = styled.div`
+// export const MenuListHidden = styled.div`
+
+
+//   @media (max-width: 720px) {
+
+//     position: fixed;
+//     top: 50px;
+//     left: 0;
+//     display: grid;
+//     grid-template-rows: repeat(4, 1fr);
+//     width: 100%;
+//     height: 95vh;
+//     background-color: rgba(255, 255, 255, .9);
+//     z-index: 100;
+//     padding: 20px 0;
+//     align-items: start;
+//     justify-items: center;
+//     animation: slideBack 1s forwards;
+
+//     @keyframes slideBack {
+//       0% {
+//         transform: translateX(0);
+//         opacity: 1;
+
+//       }
+//       100% {
+//         transform: translateX(120%);
+//         opacity: 0;
+
+//       }
+//     }
+//   }
+
+//   a{
+//     color: #fff;
+//     text-decoration: none;
+//     font-size: 24px;
+//     font-weight: 700;
+//   }
+
+//   a:hover {
+//     font-size: 28px;
+//   }
+
+// `
+
+export const BottomHeader = styled.div`
 
   display: flex;
   height: auto;
@@ -197,61 +261,3 @@ const BottomHeader = styled.div`
 
   
 `
-
-class Header extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      menuButtonToggled: false
-    }
-    
-  }
-
-  toggle = () => {
-    this.setState({menuButtonToggled: !this.state.menuButtonToggled})
-  }
-  
-
-  render() {
-    const menuChange = this.state.menuButtonToggled ? 'change' : '';
-    return (
-        <HeaderWrapper>
-          <HeaderGroup>
-          <TopHeader>
-            <MenuButton menuToggled={this.state.menuButtonToggled} onClick={this.toggle}>
-              <div className={`bar1 ${menuChange}`}></div>
-              <div className={`bar2 ${menuChange}`}></div>
-              <div className={`bar3 ${menuChange}`}></div>
-            </MenuButton>
-            <Logo>Blemiviv skin care</Logo>
-          </TopHeader>
-          <BottomHeader>
-            <Link to="/">Home</Link>
-            <Link to="/">About</Link>
-            <Link to="/">Shop</Link>
-            <Link to="/">Contact</Link>
-          </BottomHeader>
-        </HeaderGroup>
-        {this.state.menuButtonToggled && (
-          <MenuList>
-            <Link to="/">Home</Link>
-            <Link to="/">About</Link>
-            <Link to="/">Shop</Link>
-            <Link to="/">Contact</Link>
-        </MenuList>
-        )}
-      </HeaderWrapper>
-    )
-  }
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
