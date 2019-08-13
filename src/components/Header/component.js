@@ -104,7 +104,7 @@ export const MenuButton = styled.div`
       opacity: 0;
     }
     .bar3.change {
-      transform: rotate(45deg) translate(-4px, -6px);
+      transform: rotate(45deg) translate(-4px, -5px);
     }
   `} 
 }
