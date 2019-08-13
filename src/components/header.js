@@ -40,6 +40,8 @@ const TopHeader = styled.div`
 
   position: relative;
   width: 100%;
+  align-items: center;
+  justify-items: center;
   
 
 
@@ -60,8 +62,6 @@ const TopHeader = styled.div`
 
 const Logo = styled.p`
   
-  text-align: center;
-  text-justify: center;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
@@ -125,7 +125,8 @@ const MenuList = styled.div`
     height: 95vh;
     background-color: rgba(12,5,11, .9);
     z-index: 100;
-    align-items: center;
+    padding: 20px 0;
+    align-items: start;
     justify-items: center;
     animation: slideIn 1s forwards;
 
