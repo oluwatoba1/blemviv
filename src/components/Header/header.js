@@ -49,7 +49,7 @@ class Header extends Component {
           <MenuList menuToggled={this.state.menuButtonToggled}>
             <Link to="/">Home</Link>
             <Link to="/">About us</Link>
-            <Link to="/">Shop here with us</Link>
+            <Link to="/">Shop here with us!</Link>
             <Link to="/">Contact us</Link>
             <SocialMedia>
               <img src={ig} />
@@ -63,9 +63,9 @@ class Header extends Component {
         {this.state.menuButtonToggled === false && (
           <MenuListHidden>
             <Link to="/">Home</Link>
-            <Link to="/">About</Link>
-            <Link to="/">Shop</Link>
-            <Link to="/">Contact</Link>
+            <Link to="/">About us</Link>
+            <Link to="/">Shop here with us!</Link>
+            <Link to="/">Contact us</Link>
         </MenuListHidden>
         )}
       </HeaderWrapper>
