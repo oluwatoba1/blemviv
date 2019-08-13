@@ -92,7 +92,7 @@ export const MenuButton = styled.div`
   
     background-color: #333;
     width: 25px;
-    height: 4px;
+    height: 3px;
     transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   
