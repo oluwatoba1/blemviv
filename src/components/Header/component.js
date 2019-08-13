@@ -50,7 +50,7 @@ export const TopHeader = styled.div`
 
   @media (max-width: 640px) {
     display: grid;
-    grid-template-columns: 10% auto;
+    grid-template-columns: auto 10%;
   }
 
 
@@ -128,13 +128,7 @@ export const MenuList = styled.div`
     padding: 20px 40px;
     align-items: start;
     justify-items: start;
-    ${({menuToggled}) => menuToggled === false && css`
-        animation: slideBack 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-    `}
-
-    ${({menuToggled}) => menuToggled === true && css`
-        animation: slideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-    `}
+    animation: slideIn 1s forwards;
 
     @keyframes slideIn {
       0% {
@@ -142,19 +136,6 @@ export const MenuList = styled.div`
       }
       100% {
         transform: translateX(0);
-      }
-    }
-
-    @keyframes slideBack {
-      0% {
-        transform: translateX(0);
-        opacity: 1;
-
-      }
-      100% {
-        transform: translateX(120%);
-        opacity: 0;
-
       }
     }
   }
@@ -173,51 +154,51 @@ export const MenuList = styled.div`
 
 `
 
-// export const MenuListHidden = styled.div`
+export const MenuListHidden = styled.div`
 
 
-//   @media (max-width: 720px) {
+  @media (max-width: 720px) {
 
-//     position: fixed;
-//     top: 50px;
-//     left: 0;
-//     display: grid;
-//     grid-template-rows: repeat(4, 1fr);
-//     width: 100%;
-//     height: 95vh;
-//     background-color: rgba(255, 255, 255, .9);
-//     z-index: 100;
-//     padding: 20px 0;
-//     align-items: start;
-//     justify-items: center;
-//     animation: slideBack 1s forwards;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    width: 100%;
+    height: 95vh;
+    background-color: rgba(255, 255, 255, .9);
+    z-index: 100;
+    padding: 20px 0;
+    align-items: start;
+    justify-items: center;
+    animation: slideBack 1s forwards;
 
-//     @keyframes slideBack {
-//       0% {
-//         transform: translateX(0);
-//         opacity: 1;
+    @keyframes slideBack {
+      0% {
+        transform: translateX(0);
+        opacity: 1;
 
-//       }
-//       100% {
-//         transform: translateX(120%);
-//         opacity: 0;
+      }
+      100% {
+        transform: translateX(120%);
+        opacity: 0;
 
-//       }
-//     }
-//   }
+      }
+    }
+  }
 
-//   a{
-//     color: #fff;
-//     text-decoration: none;
-//     font-size: 24px;
-//     font-weight: 700;
-//   }
+  a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+  }
 
-//   a:hover {
-//     font-size: 28px;
-//   }
+  a:hover {
+    font-size: 28px;
+  }
 
-// `
+`
 
 export const BottomHeader = styled.div`
 
