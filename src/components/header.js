@@ -6,6 +6,11 @@ import styled, {css} from 'styled-components'
 const HeaderWrapper = styled.div`
 
   position: relative;
+  
+  @media (max-width: 720px) {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+  }
 
 `
 
@@ -108,19 +113,25 @@ const MenuButton = styled.div`
 
 const MenuList = styled.div`
 
-  display: none;
 
   @media (max-width: 720px) {
+
+    position: fixed;
+    top: 50px;
+    left: 0;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    width: 100%;
     height: 100vh;
+    background-color: #000;
+    z-index: 100;
+    align-items: center;
+    justify-items: center;
+  }
 
-    ${({menuToggled}) => menuToggled && css`
-
-      position: absolute;
-      top: 10%;
-      left: 0;
-      display: block;
-
-  `}
+  a{
+    color: #fff;
+    text-decoration: none;
   }
 
 `
@@ -203,12 +214,14 @@ class Header extends Component {
             <Link to="/">Contact</Link>
           </BottomHeader>
         </HeaderGroup>
-        <MenuList>
-          <Link to="/">Home</Link>
-          <Link to="/">About</Link>
-          <Link to="/">Shop</Link>
-          <Link to="/">Contact</Link>
+        {this.state.menuButtonToggled && (
+          <MenuList>
+            <Link to="/">Home</Link>
+            <Link to="/">About</Link>
+            <Link to="/">Shop</Link>
+            <Link to="/">Contact</Link>
         </MenuList>
+        )}
       </HeaderWrapper>
     )
   }
