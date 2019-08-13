@@ -8,7 +8,7 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
-import loading from '../images/loader.gif'
+import loading from '../images/blemiviv.gif'
 
 import Header from "./Header/header"
 import "./layout.css"
