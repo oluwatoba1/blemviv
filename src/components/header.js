@@ -67,6 +67,8 @@ const Logo = styled.p`
   padding: 0;
   font-size: 44px;
   font-weight: 300;
+  text-align: center;
+  text-justify: center;
 
   @media (max-width: 720px) {
     font-size: 28px;
