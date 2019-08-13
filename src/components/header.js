@@ -84,7 +84,6 @@ const MenuButton = styled.div`
 
 @media (max-width: 720px){
   display: inline-block;
-  margin: 10px auto;
 
   .bar1, .bar2, .bar3 {
   
