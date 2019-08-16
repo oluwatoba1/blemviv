@@ -120,7 +120,7 @@ export const MenuList = styled.div`
     top: 50px;
     left: 0;
     display: grid;
-    grid-template-rows: 15vh 15vh 15vh 15vh auto;
+    grid-template-rows: repeat(6, 15vh);
     width: 100%;
     height: 95vh;
     background-color: rgba(255, 255, 255, .9);
@@ -169,13 +169,16 @@ export const MenuList = styled.div`
 `
 
 export const SocialMedia = styled.div`
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 40px;
   align-self: center;
-  img {
-    height: 30px;
-  }
+  overflow: hidden;
+
+  img {   
+    height: 40px;
+  } 
 
 `
 
@@ -188,7 +191,7 @@ export const MenuListHidden = styled.div`
     top: 50px;
     left: 0;
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 15vh);
     width: 100%;
     height: 95vh;
     background-color: rgba(255, 255, 255, .9);
@@ -222,7 +225,7 @@ export const BottomHeader = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  border: 1px solid #dadad8;
+  border: 1px solid #974e4e;
   background-color: rgba(220, 220, 220, .4);
 ;
 

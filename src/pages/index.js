@@ -38,7 +38,7 @@ const CellGroup = styled.div`
   margin-top: 20px;
   grid-gap: 30px;
   overflow-x: scroll;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid #974e4e;
   -webkit-overflow-scrolling: touch;
 
   &::-webkit-scrollbar {
@@ -53,9 +53,12 @@ const Cell = styled.img`
   height: 200px;
   padding: 30px 0;
   transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0.8;
+  cursor
 
   &:hover {
     transform: scale(1.1);
+    opacity: 1;
   }
 
   @media (max-width: 720px) {

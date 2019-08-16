@@ -31,7 +31,7 @@ class Header extends Component {
         <HeaderWrapper>
           <HeaderGroup>
           <TopHeader>
-            <Logo>Blemiviv skin care</Logo>
+            <Logo>Blemiviv Koncept</Logo>
             <MenuButton menuToggled={this.state.menuButtonToggled} onClick={this.toggle}>
               <div className={`bar1 ${menuChange}`}></div>
               <div className={`bar2 ${menuChange}`}></div>
@@ -49,7 +49,8 @@ class Header extends Component {
           <MenuList menuToggled={this.state.menuButtonToggled}>
             <Link to="/">Home</Link>
             <Link to="/">About us</Link>
-            <Link to="/">Shop here with us!</Link>
+            <Link to="/">Shop</Link>
+            <Link to="/">Kids</Link>
             <Link to="/">Contact us</Link>
             <SocialMedia>
               <img src={ig} />
@@ -62,10 +63,19 @@ class Header extends Component {
 
         {this.state.menuButtonToggled === false && (
           <MenuListHidden>
-            <Link to="/">Home</Link>
+          <Link to="/">Home</Link>
             <Link to="/">About us</Link>
-            <Link to="/">Shop here with us!</Link>
+            <Link to="/">Shop</Link>
+            <Link to="/">Kids</Link>
             <Link to="/">Contact us</Link>
+            <SocialMedia>
+              <div>
+                <span image={ig} />
+              </div>
+              <img src={twitter} />
+              <img src={fb} />
+              <img src={yt} />
+            </SocialMedia>
         </MenuListHidden>
         )}
       </HeaderWrapper>
