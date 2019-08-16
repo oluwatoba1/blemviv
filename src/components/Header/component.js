@@ -176,7 +176,7 @@ export const SocialMedia = styled.div`
   align-self: center;
   overflow: hidden;
 
-  img {   
+  img { 
     height: 40px;
   } 
 
