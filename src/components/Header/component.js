@@ -91,7 +91,7 @@ export const MenuButton = styled.div`
   .bar1, .bar2, .bar3 {
   
     background-color: #333;
-    width: 25px;
+    width: 20px;
     height: 3px;
     transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }

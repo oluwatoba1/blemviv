@@ -29,7 +29,7 @@ class Header extends Component {
     const menuChange = this.state.menuButtonToggled ? 'change' : '';
     const toggle = [];
     // if(this.state.menuButtonToggled === false) {
-    //   this.refs.MenuButton.animation = "slideBack 1s forwards";
+    //   this.refs.MenuList.css.animation = "slideBack 1s forwards";
     // }
     return (
         <HeaderWrapper>
