@@ -19,18 +19,18 @@ position: relative;
 
 const MainImage = styled.div`
   background: url(${props => props.image});
-  height: 700px;
+  height: 600px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   @media (max-width: 720px) {
-    height: 450px;
+    height: 400px;
   }
 
   @media (max-width: 640px) {
-    height: 400px;
+    height: 370px;
   }
  
 `

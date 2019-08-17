@@ -15,22 +15,10 @@ export const HeaderWrapper = styled.div`
 export const HeaderGroup = styled.header`
 
   position: fixed;
-  height: 90px;
   width: 100%;
   z-index: 100;
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
+  display: block;
   background-color: #fff;
-
-  @media (max-width: 720px) {
-    height: 50px;
-    grid-template-rows: repeat(1, 1fr);
-  }
-
-  @media (max-width: 640px) {
-    height: 50px;
-    grid-template-rows: repeat(1, 1fr);
-  }
 
 `
 
