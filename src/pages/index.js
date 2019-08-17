@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 import blemviv1 from '../images/blemiviv.jpg'
 import blemvivscroll2 from '../images/blemviv-scroll2.jpg';
 import manicure from '../images/manicure-pedicure.jpg'
-import hairstyling from '../images/hairstyling.jpg'
+import bodywax from '../images/bodywax.jpg'
 import makeup from '../images/makeup2.jpg'
 import bodyspa from '../images/bodyspa.jpg'
 
@@ -154,7 +154,7 @@ const ExploreCell = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  transition: 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   &:hover {
     background-image: linear-gradient(rgba(151, 78, 78, .4), rgba(151, 78, 78, .4)), url(${props => props.image});
@@ -216,8 +216,8 @@ const IndexPage = () => (
             <ExploreCellCaption>Manicure & Pedicure</ExploreCellCaption>
           </ExploreCellGroup>
           <ExploreCellGroup>
-            <ExploreCell image={hairstyling} />
-            <ExploreCellCaption>Hair Styling</ExploreCellCaption>
+            <ExploreCell image={bodywax} />
+            <ExploreCellCaption>Body Waxing</ExploreCellCaption>
           </ExploreCellGroup>
         </ExploreCellWrapper>
       </Left>
