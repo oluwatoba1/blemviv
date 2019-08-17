@@ -130,10 +130,6 @@ export const MenuList = styled.div`
     justify-items: start;
     animation: slideIn 1s forwards;
 
-    .toggleOff {
-      animation: slideBack 1s forwards;
-    }
-
     @keyframes slideIn {
       0% {
         transform: translateX(120%);
@@ -204,7 +200,7 @@ export const BottomHeader = styled.div`
     color: rgba(0, 0, 0, .7);
     padding-right: 60px;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 18px;
     transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     :nth-child(4) {

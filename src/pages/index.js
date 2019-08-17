@@ -89,6 +89,7 @@ const ExploreGroup = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 20px;
   padding: 50px 100px;
+  border: 1px solid #974e4e;
   align-items: center;
   justify-content: center;
   grid-template-rows: auto auto;
@@ -188,6 +189,134 @@ const ExploreCellCaption = styled.span`
 
 `
 
+const QuoteGroup = styled.div`
+
+  position: relative;
+  padding: 35px 70px;
+
+  @media (max-width: 720px) {
+    padding: 15px;
+  }
+
+`
+
+const Quote = styled.div`
+
+  background-color: #974e4e;
+  padding: 60px;
+  height: 500px;
+  width: 600px;
+  margin: 0 auto;
+  align-items: center;
+  justify-items: center;
+
+  h4 {
+    color: #fff;
+    font-size: 28px;
+    text-transform: capitalize;
+    margin: 50px 0 0 0;
+  }
+
+  @media (max-width: 720px) {
+    padding: 15px;
+    height: 550px;
+    width: 240px;
+
+  h4 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+}
+
+`
+
+const Form = styled.form`
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  margin: 25px 0; 
+
+  input, textarea {
+    border: none;
+    border-bottom: 2px solid #808080;
+    background-color: #974e4e;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 16px;
+    outline: none;
+
+    ::placeholder {
+      color: #fff;
+    }
+  }
+
+  input {
+    height: 25px;
+  }
+
+  @media (max-width: 720px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0;
+    margin: 40px 0;
+
+    input, textarea {
+    margin-bottom: 30px;
+    }
+
+    textarea {
+      margin-bottom: 0;
+    }
+  }
+
+`
+const Name = styled.input`
+  
+`
+
+const PhoneNumber = styled.input`
+
+
+`
+
+const Email = styled.input`
+
+
+`
+
+const Subject = styled.input`
+
+  
+
+`
+
+const Message = styled.textarea`
+
+  
+
+`
+
+const SubmitButton = styled.button`
+
+  height: 40px;
+  align-self: flex-end;
+  border: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  background: #f7e9e9;
+  cursor: pointer;
+  color: #333;
+  margin-bottom: 20px;
+
+  &:hover {
+    background: #974e4e;
+    border: 1px solid #fff;
+    color: #fff;
+  }
+
+`
+
 const IndexPage = () => (
   <Layout>
     <Wrapper>
@@ -233,7 +362,22 @@ const IndexPage = () => (
           </ExploreCellGroup>
         </ExploreCellWrapper>
       </Right>
-    </ExploreGroup>    
+    </ExploreGroup>
+
+    <QuoteGroup>
+      <Quote>
+        <h4>Request a quote</h4>
+        <Form>
+          <Name placeholder="Name*" />
+          <PhoneNumber placeholder="Phone number*" />
+          <Email placeholder="Email*" />
+          <Subject placeholder="Subject*" />
+          <Message rows="10" placeholder="Message*" />
+          <SubmitButton>Send Message</SubmitButton>
+        </Form>
+      </Quote>
+    </QuoteGroup>
+
     </Wrapper>
   </Layout>
 )
