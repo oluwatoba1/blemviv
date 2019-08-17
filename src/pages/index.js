@@ -14,6 +14,7 @@ import bodyspa from '../images/bodyspa.jpg'
 
 const Wrapper = styled.div`
 position: relative;
+
 `
 
 const MainImage = styled.div`
@@ -52,13 +53,14 @@ const CellGroup = styled.div`
 
 `
 
-const Cell = styled.img`
+const Cell = styled.div`
 
+  background: #000;
   height: 200px;
   padding: 30px 0;
   transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   opacity: 0.8;
-  cursor
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.1);
@@ -68,11 +70,14 @@ const Cell = styled.img`
   @media (max-width: 720px) {
     height: 100px;
     padding: 25px 0;
+    opacity: 1;
+    
   }
 
   @media (max-width: 640px) {
     height: 100px;
     padding: 20px 0;
+    opacity: 1;
   }
 
 `
@@ -81,8 +86,14 @@ const ExploreGroup = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 50px 250px;
+  padding: 50px 150px;
+  align-items: center;
+  justify-content: center;
 
+  @media (max-width: 720px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 20px;
+  }
 
 
 `
@@ -129,29 +140,47 @@ const ExploreCellGroup = styled.div`
   padding: 25px;
   border: 1px solid #974e4e;
   margin-bottom: 20px;
+  position: relative;
 
 `
 
 const ExploreCell = styled.div`
 
-  background: url(${props => props.image});
-  height: 500px;
+  background-image: url(${props => props.image});
+  height: 480px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  
+
+  &:hover {
+    background-image: linear-gradient(rgba(151, 78, 78, .4), rgba(151, 78, 78, .4)), url(${props => props.image});
+  }
+
+  @media (max-width: 720px) {
+
+    height: 280px;
+    
+  }
   
 `
 
 const ExploreCellCaption = styled.span`
-  width: 60%;
-  height: 80px;
-  font-size: 24px;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
   text-transform: uppercase;
   padding: 10px;
   color: #fff;
   background-color: #333;
-  text-justify: end;
+  text-align: center;
+
+  @media (max-width: 720px) {
+
+    font-size: 16px;
+    
+  }
+
 `
 
 const IndexPage = () => (
@@ -161,14 +190,14 @@ const IndexPage = () => (
     <MainImage image={blemviv1} />
     <CellGroup>
 
-      <Cell src={blemvivscroll2}/>
-      <Cell src={blemvivscroll2}/>
-      <Cell src={blemvivscroll2}/>
-      <Cell src={blemvivscroll2}/>
-      <Cell src={blemvivscroll2}/>
-      <Cell src={blemvivscroll2}/>
-      <Cell src={blemvivscroll2}/>
-      <Cell src={blemvivscroll2}/>
+      <Cell image={blemvivscroll2}/>
+      <Cell image={blemvivscroll2}/>
+      <Cell image={blemvivscroll2}/>
+      <Cell image={blemvivscroll2}/>
+      <Cell image={blemvivscroll2}/>
+      <Cell image={blemvivscroll2}/>
+      <Cell image={blemvivscroll2}/>
+      <Cell image={blemvivscroll2}/>
 
     </CellGroup>
     <ExploreGroup>
