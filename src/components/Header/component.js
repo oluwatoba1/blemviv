@@ -139,10 +139,6 @@ export const MenuList = styled.div`
       }
     }
 
-    ${({menuToggled}) => menuToggled === false && css`
-      animation: slideBack 1s forwards;
-    `}
-
     @keyframes slideBack {
       0% {
         transform: translateX(0);
