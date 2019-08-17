@@ -92,6 +92,7 @@ const ExploreGroup = styled.div`
   height: 95vh;
 
   @media (max-width: 720px) {
+    padding: 50px 100px;
     grid-template-columns: repeat(1, 1fr);
     grid-column-gap: 20px;
   }
