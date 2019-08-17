@@ -88,7 +88,7 @@ const ExploreGroup = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 20px;
-  padding: 50px 150px;
+  padding: 50px 100px;
   align-items: center;
   justify-content: center;
   grid-template-rows: auto auto;
@@ -152,7 +152,7 @@ const ExploreCell = styled.div`
   height: 480px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 0 100%;
+  background-position: center;
   transition: 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   &:hover {
