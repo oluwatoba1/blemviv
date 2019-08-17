@@ -304,7 +304,7 @@ const SubmitButton = styled.button`
   border: none;
   text-transform: uppercase;
   font-size: 14px;
-  background: #f7e9e9;
+  background: #fff;
   cursor: pointer;
   color: #333;
   margin-bottom: 20px;
