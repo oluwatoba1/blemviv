@@ -240,7 +240,7 @@ const Form = styled.form`
 
   input, textarea {
     border: none;
-    border-bottom: 2px solid #808080;
+    border-bottom: 2px solid #fff;
     background-color: #974e4e;
     color: #fff;
     margin-bottom: 20px;
