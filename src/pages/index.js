@@ -137,7 +137,7 @@ const ExploreCellWrapper = styled.div`
 
 const ExploreCellGroup = styled.div`
 
-  padding: 25px;
+  padding: 20px;
   border: 1px solid #974e4e;
   margin-bottom: 20px;
   position: relative;

@@ -33,7 +33,7 @@ body {
 
 @media (max-width: 720px) {
   .Loading img {
-    height: 150px;
+    height: 100px;
   }
 }
 
