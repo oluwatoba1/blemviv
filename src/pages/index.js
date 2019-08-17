@@ -266,7 +266,7 @@ const Form = styled.form`
     }
 
     textarea {
-      margin-bottom: 0;
+      margin-bottom: 5px;
     }
   }
 
