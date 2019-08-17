@@ -105,7 +105,7 @@ export const MenuList = styled.div`
   @media (max-width: 720px) {
 
     position: fixed;
-    top: 40px;
+    top: 30px;
     left: 0;
     display: grid;
     grid-template-rows: repeat(6, 15vh);
