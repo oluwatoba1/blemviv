@@ -44,7 +44,7 @@ const CellGroup = styled.div`
   padding: 20px;
   grid-gap: 30px;
   overflow-x: scroll;
-  border: 1px solid #974e4e;
+  border: 2px solid #974e4e;
   -webkit-overflow-scrolling: touch;
 
   &::-webkit-scrollbar {
@@ -89,7 +89,7 @@ const ExploreGroup = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 20px;
   padding: 50px 100px;
-  border: 1px solid #974e4e;
+  border-bottom: 2px solid #974e4e;
   align-items: center;
   justify-content: center;
   grid-template-rows: auto auto;
@@ -193,6 +193,7 @@ const QuoteGroup = styled.div`
 
   position: relative;
   padding: 35px 70px;
+  border-bottom: 2px solid #974e4e;
 
   @media (max-width: 720px) {
     padding: 15px;
