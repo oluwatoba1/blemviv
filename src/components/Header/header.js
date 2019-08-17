@@ -27,6 +27,10 @@ class Header extends Component {
 
   render() {
     const menuChange = this.state.menuButtonToggled ? 'change' : '';
+    const toggle = [];
+    // if(this.state.menuButtonToggled === false) {
+    //   this.refs.MenuButton.animation = "slideBack 1s forwards";
+    // }
     return (
         <HeaderWrapper>
           <HeaderGroup>
@@ -46,7 +50,7 @@ class Header extends Component {
           </BottomHeader>
         </HeaderGroup>
         {this.state.menuButtonToggled && (
-          <MenuList menuToggled={this.state.menuButtonToggled}>
+          <MenuList ref="MenuList" menuToggled={this.state.menuButtonToggled}>
             <Link to="/">Home</Link>
             <Link to="/">About us</Link>
             <Link to="/">Shop</Link>

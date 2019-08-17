@@ -130,6 +130,10 @@ export const MenuList = styled.div`
     justify-items: start;
     animation: slideIn 1s forwards;
 
+    .toggleOff {
+      animation: slideBack 1s forwards;
+    }
+
     @keyframes slideIn {
       0% {
         transform: translateX(120%);

@@ -94,7 +94,7 @@ const ExploreGroup = styled.div`
   grid-template-rows: auto auto;
 
   @media (max-width: 720px) {
-    padding: 50px 100px;
+    padding: 50px 50px;
     grid-template-columns: 1fr;
     grid-row-gap: 20px;
   }
