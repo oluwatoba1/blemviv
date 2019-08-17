@@ -41,6 +41,7 @@ const CellGroup = styled.div`
   display: grid;
   grid-template-columns: repeat(8, 250px);
   margin-top: 20px;
+  padding: 20px;
   grid-gap: 30px;
   overflow-x: scroll;
   border: 1px solid #974e4e;
@@ -57,23 +58,20 @@ const Cell = styled.div`
 
   background: url(${props => props.image});
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 200px;
   padding: 30px 0;
   transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  opacity: 0.8;
   cursor: pointer;
 
   &:hover {
     transform: scale(1.1);
-    opacity: 1;
   }
 
   @media (max-width: 720px) {
-    height: 100px;
+    height: 150px;
     padding: 25px 0;
-    opacity: 1;
     
   }
 
@@ -89,23 +87,23 @@ const ExploreGroup = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
   padding: 50px 150px;
   align-items: center;
   justify-content: center;
-  height: 95vh;
+  grid-template-rows: auto auto;
 
   @media (max-width: 720px) {
     padding: 50px 100px;
-    grid-template-columns: repeat(1, 1fr);
-    grid-column-gap: 20px;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
   }
 
 
 `
 
 const Left = styled.div`
-  height: 100vh;
-  padding: 20px;
+  position: relative;
 `
 const Right = Left
 
@@ -136,7 +134,7 @@ const ExploreCellWrapper = styled.div`
   position: relative;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
-  grid-gap: 20px;
+  grid-row-gap: 20px;
 
 `
 
@@ -144,21 +142,22 @@ const ExploreCellGroup = styled.div`
 
   padding: 20px;
   border: 1px solid #974e4e;
-  margin-bottom: 20px;
   position: relative;
 
 `
 
 const ExploreCell = styled.div`
 
-  background-image: url(${props => props.image});
+  background: url(${props => props.image});
   height: 480px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  z-index: -1;
+  cursor: pointer;
 
   &:hover {
-    background-image: linear-gradient(rgba(151, 78, 78, .4), rgba(151, 78, 78, .4)), url(${props => props.image});
+    background: linear-gradient(rgba(151, 78, 78, .4), rgba(151, 78, 78, .4)), url(${props => props.image});
   }
 
   @media (max-width: 720px) {
@@ -171,18 +170,19 @@ const ExploreCell = styled.div`
 
 const ExploreCellCaption = styled.span`
   width: 100px;
-  height: 40px;
   font-size: 20px;
   cursor: pointer;
   text-transform: uppercase;
   padding: 10px;
   color: #fff;
+  font-weight: 700;
   background-color: #333;
   text-align: center;
 
   @media (max-width: 720px) {
 
-    font-size: 16px;
+    font-size: 15px;
+    padding: 5px;
     
   }
 
