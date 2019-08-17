@@ -139,6 +139,10 @@ export const MenuList = styled.div`
       }
     }
 
+    ${({menuToggled}) => menuToggled === false && css`
+      animation: slideBack 1s forwards;
+    `}
+
     @keyframes slideBack {
       0% {
         transform: translateX(0);
@@ -179,42 +183,6 @@ export const SocialMedia = styled.div`
   img { 
     height: 40px;
   } 
-
-`
-
-export const MenuListHidden = styled.div`
-
-
-  @media (max-width: 720px) {
-
-    position: fixed;
-    top: 50px;
-    left: 0;
-    display: grid;
-    grid-template-rows: repeat(6, 15vh);
-    width: 100%;
-    height: 95vh;
-    background-color: rgba(255, 255, 255, .9);
-    opacity: 0;
-    z-index: 100;
-    padding: 20px 0;
-    align-items: start;
-    justify-items: center;
-    animation: slideBack 1s forwards;
-
-    
-  }
-
-  a{
-    color: #fff;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: 800;
-  }
-
-  a:hover {
-    font-size: 28px;
-  }
 
 `
 
