@@ -39,7 +39,7 @@ const CellGroup = styled.div`
 
   position: relative;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 250px);
   margin-top: 20px;
   grid-gap: 30px;
   overflow-x: scroll;
@@ -55,7 +55,10 @@ const CellGroup = styled.div`
 
 const Cell = styled.div`
 
-  background: #000;
+  background: url(${props => props.image});
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 200px;
   padding: 30px 0;
   transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
