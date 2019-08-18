@@ -54,6 +54,7 @@ const CellGroup = styled.div`
 
   @media (max-width: 720px) {
     grid-template-columns: repeat(8, 220px);
+    grid-gap: 20px;
   }
 
 `
