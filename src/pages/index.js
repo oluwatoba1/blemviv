@@ -26,11 +26,11 @@ const MainImage = styled.div`
   transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   @media (max-width: 720px) {
-    height: 350px;
+    height: 300px;
   }
 
   @media (max-width: 640px) {
-    height: 320px;
+    height: 280px;
   }
  
 `
