@@ -52,13 +52,17 @@ const CellGroup = styled.div`
 
   }
 
+  @media (max-width: 720px) {
+    grid-template-columns: repeat(8, 220px);
+  }
+
 `
 
 const Cell = styled.div`
 
   background: url(${props => props.image});
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   height: 200px;
   padding: 30px 0;
@@ -70,7 +74,7 @@ const Cell = styled.div`
   }
 
   @media (max-width: 720px) {
-    height: 100px;
+    height: 150px;
     padding: 20px 0;
     
   }
