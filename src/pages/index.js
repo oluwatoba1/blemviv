@@ -26,11 +26,11 @@ const MainImage = styled.div`
   transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   @media (max-width: 720px) {
-    height: 300px;
+    height: 350px;
   }
 
   @media (max-width: 640px) {
-    height: 280px;
+    height: 320px;
   }
  
 `
@@ -70,8 +70,8 @@ const Cell = styled.div`
   }
 
   @media (max-width: 720px) {
-    height: 150px;
-    padding: 25px 0;
+    height: 100px;
+    padding: 20px 0;
     
   }
 
@@ -312,7 +312,7 @@ const SubmitButton = styled.button`
 
   &:hover {
     background: #974e4e;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     color: #fff;
   }
 

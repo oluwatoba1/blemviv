@@ -4,11 +4,6 @@ import styled, {css} from 'styled-components'
 export const HeaderWrapper = styled.div`
 
   position: relative;
-  
-  @media (max-width: 720px) {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-  }
 
 `
 
@@ -105,7 +100,7 @@ export const MenuList = styled.div`
   @media (max-width: 720px) {
 
     position: fixed;
-    top: 30px;
+    top: 40px;
     left: 0;
     display: grid;
     grid-template-rows: repeat(6, 15vh);
