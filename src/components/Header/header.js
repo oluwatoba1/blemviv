@@ -53,7 +53,7 @@ class Header extends Component {
           <MenuList id="menuList" ref="menuList" view={this.state.menuButtonToggled}>
             <Link to="/">Home</Link>
             <Link to="/">About us</Link>
-            <Link to="/">Shop</Link>
+            <Link to="/shop">Shop</Link>
             <Link to="/">Kids</Link>
             <Link to="/">Contact us</Link>
             <SocialMedia>
