@@ -46,8 +46,8 @@ export const Logo = styled.p`
   text-transform: uppercase;
   margin: 0;
   padding: 0;
-  font-size: 44px;
-  font-weight: 700;
+  font-size: 36px;
+  font-weight: 600;
   text-align: center;
   text-justify: center;
 
@@ -96,6 +96,7 @@ export const MenuButton = styled.div`
 
 export const MenuList = styled.div`
 
+  display: none;
 
   @media (max-width: 720px) {
 
@@ -111,7 +112,9 @@ export const MenuList = styled.div`
     padding: 20px 40px;
     align-items: start;
     justify-items: start;
-    animation: slideIn 1s forwards;
+    transition: all 0.5s ease-out;
+    transform: ${props=> props.view ? 'translateX(0)' : 'translateX(100%)'};
+    /* animation: slideIn 1s forwards;
 
     @keyframes slideIn {
       0% {
@@ -133,7 +136,7 @@ export const MenuList = styled.div`
         opacity: 0;
 
       }
-    }
+    } */
   }
 
   a{
@@ -168,27 +171,13 @@ export const SocialMedia = styled.div`
 export const BottomHeader = styled.div`
 
   display: flex;
-  height: auto;
+  height: 26px;
   width: 100%;
+  padding: 4px;
   justify-content: center;
   align-items: center;
   border: 1px solid #974e4e;
   background-color: rgba(220, 220, 220, .4);
-;
-
-
-  a {
-    text-decoration: none;
-    margin: 0;
-    color: rgba(0, 0, 0, .7);
-    padding-right: 60px;
-    text-transform: uppercase;
-    font-size: 18px;
-    transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-    :nth-child(4) {
-    padding-right: 0;
-  }
 
   @media (max-width: 720px) {
     display: none;
@@ -197,6 +186,25 @@ export const BottomHeader = styled.div`
   @media (max-width: 640px) {
     display: none;
   }
+;
+
+
+  a {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, .7);
+    padding-right: 60px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 14px;
+    transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    :nth-child(4) {
+    padding-right: 0;
+  }
+
+  
 
   }
 

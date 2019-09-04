@@ -44,13 +44,13 @@ class Header extends Component {
           </TopHeader>
           <BottomHeader>
             <Link to="/">Home</Link>
-            <Link to="/">About</Link>
-            <Link to="/">Shop</Link>
-            <Link to="/">Contact</Link>
+            <Link to="/about">About</Link>
+            <Link to="/shop">Shop</Link>
+            <Link to="/contact">Contact</Link>
           </BottomHeader>
         </HeaderGroup>
-        {this.state.menuButtonToggled && (
-          <MenuList id="menuList" ref="menuList" menuToggled={this.state.menuButtonToggled}>
+        {/* {this.state.menuButtonToggled && ( */}
+          <MenuList id="menuList" ref="menuList" view={this.state.menuButtonToggled}>
             <Link to="/">Home</Link>
             <Link to="/">About us</Link>
             <Link to="/">Shop</Link>
@@ -63,7 +63,7 @@ class Header extends Component {
               <img src={yt} />
             </SocialMedia>
         </MenuList>
-        )}
+        {/* )} */}
       </HeaderWrapper>
     )
   }
