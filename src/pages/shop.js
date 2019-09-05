@@ -231,6 +231,12 @@ class Shop extends Component {
                     <p>SOME TEXT 3</p>
                     </ProductGroup>
                 }
+                {this.state.listNumber === 4 &&
+
+                    <ProductGroup>
+                        <OneHalf background={this.state.listNumber}><p>SOME TEXT 4</p></OneHalf>
+                        <OtherHalf></OtherHalf>
+                    </ProductGroup>}
                 
             
             </Wrapper>
