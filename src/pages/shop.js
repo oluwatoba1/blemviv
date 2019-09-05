@@ -219,7 +219,7 @@ class Shop extends Component {
                         },
                         {
                             id: 4,
-                            background: 'linear-gradient(90deg, rgb(86,189,18) 0%, rgb(58,129,10) 55%)'
+                            background: 'linear-gradient(90deg, rgb(81,129,10) 0%, rgb(101,160,12) 55%)'
                         }
                     ]
         
