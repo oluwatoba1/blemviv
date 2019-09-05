@@ -206,19 +206,19 @@ class Shop extends Component {
                 items: [
                         {
                             id: 1,
-                            background: 'linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 30%)'
+                            background: 'linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 55%)'
                         },
                         {
                             id: 2,
-                            background: 'linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 30%)'
+                            background: 'linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 55%)'
                         },
                         {
                             id: 3,
-                            background: 'linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 30%)'
+                            background: 'linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 55%)'
                         },
                         {
                             id: 4,
-                            background: 'linear-gradient(90deg, rgb(86,189,18) 0%, rgb(58,129,10) 30%)'
+                            background: 'linear-gradient(90deg, rgb(86,189,18) 0%, rgb(58,129,10) 55%)'
                         }
                     ]
         
