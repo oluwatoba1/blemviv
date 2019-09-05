@@ -27,10 +27,10 @@ const BigText = styled.h1`
     margin: 0;
     font-size: 100px;
     padding: 20px;
-    text-align: start;
+    align-self: start;
 
     @media (max-width: 640px) {
-        font-size: 70px;
+        font-size: 60px;
     }
 `
 
@@ -39,7 +39,7 @@ const SmallText = styled.h5`
     font-size: 16px;
     text-decoration: underline;
     padding: 0 20px;
-    text-align: end;
+    align-self: end;
 
     @media (max-width: 640px) {
         font-size: 10px;
@@ -111,11 +111,10 @@ const OneHalf = styled.div`
     height: 50vh;
     animation: fadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-    ${
-        ({background}) => background === 1 || 4 && css`
-            background: linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 30%);;
-        `
-    }
+    
+         
+            background: ${({background}) => background};
+
 
     @keyframes fadeIn {
             0%{
@@ -202,9 +201,9 @@ class Shop extends Component {
     
 
     render() {
-        const Pages = [
+        const Pages =
             {
-                item: [
+                items: [
                         {
                             id: 1,
                             background: 'linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 30%)'
@@ -212,11 +211,18 @@ class Shop extends Component {
                         {
                             id: 2,
                             background: 'linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 30%)'
+                        },
+                        {
+                            id: 3,
+                            background: 'linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 30%)'
+                        },
+                        {
+                            id: 4,
+                            background: 'linear-gradient(90deg, rgb(86,189,18) 0%, rgb(58,129,10) 30%)'
                         }
                     ]
         
-            }
-        ];
+            };
         return (
             <Wrapper>
                 {this.state.listNumber === 0 &&
@@ -232,23 +238,23 @@ class Shop extends Component {
                 }    
                 
 
-                {Pages.map(page =>
-                    this.state.listNumber === 1 &&
+                {Pages.items.map((item) =>
+                    this.state.listNumber === item.id &&
 
-                        <ProductGroup>
-                            <OneHalf background={this.state.listNumber}><p>SOME TEXT</p></OneHalf>
+                        <ProductGroup key={item.id}>
+                            <OneHalf background={item.background}><p>SOME TEXT</p></OneHalf>
                             <OtherHalf></OtherHalf>
                         </ProductGroup>
 
                 )}
 
-                {this.state.listNumber === 2 &&
-                    <ProductGroup ref={this.myRef}>
+                {/* {this.state.listNumber === 2 &&
+                    <ProductGroup>
                     <p>SOME TEXT 2</p>
                     </ProductGroup>
                 }
                 {this.state.listNumber === 3 &&
-                    <ProductGroup ref={this.myRef}>
+                    <ProductGroup>
                     <p>SOME TEXT 3</p>
                     </ProductGroup>
                 }
@@ -257,7 +263,7 @@ class Shop extends Component {
                     <ProductGroup>
                         <OneHalf background={this.state.listNumber}><p>SOME TEXT 4</p></OneHalf>
                         <OtherHalf></OtherHalf>
-                    </ProductGroup>}
+                    </ProductGroup>} */}
                 
             
             </Wrapper>
