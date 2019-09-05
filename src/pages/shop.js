@@ -63,7 +63,16 @@ const ProductGroup = styled.div`
     
     width: 100vw;
     height: 100vh;
-    transition: all 0.8s ease-out;
+    animation: slideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+        @keyframes slideUp {
+            0%{
+                transform: translateY(20px);
+            }
+            100%{
+                transform: translateY(0);
+            }
+        }
     
 
     p{
@@ -71,6 +80,7 @@ const ProductGroup = styled.div`
         padding: 20px;
         font-size: 20px;
         color: #fff;
+        animation: slideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
         @keyframes slideUp {
             0%{
