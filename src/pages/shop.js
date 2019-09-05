@@ -91,7 +91,7 @@ const OneHalf = styled.div`
     animation: fadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     ${
-        ({background}) => background === 1 && css`
+        ({background}) => background === 1 || 4 && css`
             background: linear-gradient(90deg, rgb(110,50,2) 0%, rgb(134,70,13) 30%);;
         `
     }
