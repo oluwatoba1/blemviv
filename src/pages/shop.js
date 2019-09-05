@@ -74,6 +74,7 @@ const ProductGroup = styled.div`
     
     width: 100vw;
     height: 100vh;
+    transition: all 1s ease-in-out;
     animation: slideUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
         @keyframes slideUp {
