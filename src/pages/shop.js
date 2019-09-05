@@ -6,6 +6,7 @@ const Wrapper = styled.div`
 
     position: relative;
     height: 100vh;
+    width: 100vw;
 
 
 `
@@ -26,6 +27,10 @@ const BigText = styled.h1`
     margin: 0;
     font-size: 100px;
     padding: 20px;
+
+    @media (max-width: 640px) {
+        font-size: 55px;
+    }
 `
 
 const SmallText = styled.h5`
@@ -33,6 +38,10 @@ const SmallText = styled.h5`
     font-size: 16px;
     text-decoration: underline;
     padding: 0 20px;
+
+    @media (max-width: 640px) {
+        font-size: 8px;
+    }
 `
 
 const Bottom = styled.div`
